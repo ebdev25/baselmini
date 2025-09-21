@@ -1,0 +1,5 @@
+scenario:
+  name: "EAD+10% & 1-notch down"
+  ead_multipliers:
+    Corporate: 1.10
+  rating_notches_down: 1

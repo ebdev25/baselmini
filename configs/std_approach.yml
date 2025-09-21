@@ -1,0 +1,114 @@
+# ---------- Risk Weights (Data-driven SA-style) ----------
+risk_weights:
+  Sovereign:
+    AAA: 0.00      # 0%
+    AA: 0.00       # 0%  (AA-/AA/AA+)
+    A: 0.20        # 20%
+    BBB: 0.50      # 50%
+    BB: 1.50       # 150% (explicit sub-IG)
+    B: 1.50        # 150% (B and below)
+    CCC: 1.50      # 150%
+    NR: 1.00       # 100% (unrated)
+    default: 1.00  # fallback
+  Bank:
+    AAA: 0.20      # 20%
+    AA: 0.20       # 20%
+    A: 0.50        # 50%
+    BBB: 0.50      # 50%
+    BB: 1.00       # 100%
+    B: 1.50        # 150%
+    CCC: 1.50      # 150%
+    NR: 0.50       # 50% (common SA option for unrated banks)
+    default: 0.50
+  Corporate:
+    AAA: 0.20      # 20%
+    AA: 0.20       # 20%
+    A: 0.50        # 50%
+    BBB: 1.00      # 100%
+    BB: 1.50       # 150%
+    B: 1.50        # 150% (standard SA uses 150% for B and below)
+    CCC: 1.50      # 150%
+    NR: 1.00       # 100% (unrated corporates)
+    default: 1.00
+  Retail:
+    default: 0.75  # 75%
+  Mortgage:
+    ltv_thresholds:
+      - { lte: 0.80, weight: 0.35 }  # <=80% LTV => 35%
+      - { lte: 1.00, weight: 0.50 }  # 80–100% LTV => 50%
+    default: 1.00
+  SME:
+    default: 1.00
+  Infrastructure:
+    default: 1.00
+
+# ---------- Liquidity Coverage Ratio (with Level-2 caps) ----------
+lcr:
+  inflow_cap_pct: 0.75        # 75% cap on inflows
+  level2_total_cap_pct: 0.40  # (L2A + L2B) ≤ 40% of total HQLA
+  level2b_cap_pct: 0.15       # L2B ≤ 15% of total HQLA
+
+# ---------- EAD / CCFs ----------
+ead:
+  ccf:
+    revocable: 0.10
+    irrevocable_lt1y: 0.20
+    irrevocable_ge1y: 0.50
+    performance_guarantee: 0.50
+    standby_lc: 1.00
+  default_ccf: 1.00
+
+# ---------- Collateral & CRM ----------
+collateral:
+  enabled: true
+  # Mode can be "simple" (current behavior) or "advanced" (supervisory haircuts).
+  mode: "simple"
+
+  # Simple mode haircuts (row override -> type map -> default)
+  default_haircut: 0.15
+  haircuts:
+    cash: 0.00
+    gov_bond_lvl1: 0.02
+    corp_bond: 0.15
+
+  # Advanced (supervisory) mode parameters — used when mode: "advanced"
+  supervisory:
+    haircuts:
+      cash: 0.00
+      gov_bond_lvl1: 0.02
+      corp_bond: 0.15
+    short_maturity_days: 365     # extra haircut if residual maturity < this
+    short_maturity_addon: 0.08   # +8%
+    fx_mismatch_addon: 0.08      # +8% if collateral_ccy != exposure_ccy
+
+# ---------- EU-style Supporting Factors ----------
+supporting_factors:
+  enabled: true
+  # Stacking policy for SME & Infrastructure:
+  #   "multiply" : apply both, compounding (default Basel-like behavior).
+  #   "min"      : apply only the lowest factor (no stacking).
+  #   "priority" : apply the first factor that matches from priority_order.
+  stacking: "min"
+  priority_order: ["sme","infra"]
+
+  sme:
+    on_asset_classes: ["SME"]
+    factor: 0.7619
+  infra:
+    on_asset_classes: ["Infrastructure"]
+    factor: 0.75
+
+# ---------- Capital Requirements / Buffers / Leverage ----------
+requirements:
+  cet1_min: 0.045      # 4.5%
+  tier1_min: 0.060     # 6.0%
+  total_min: 0.080     # 8.0%
+  ccb: 0.025           # capital conservation buffer
+  ccyb: 0.000          # countercyclical buffer (set per-scenario/jurisdiction)
+  gsib: 0.000          # G-SIB/O-SII buffer if applicable
+  leverage_min: 0.030  # 3% minimum leverage ratio
+
+# ---------- FX ----------
+fx:
+  base_ccy: "USD"
+

@@ -1,0 +1,4 @@
+bucket,amount_ccy,haircuts,rate
+HQLA_L1,150,0.0,
+OUTFLOW,100,,1.0
+INFLOW,20,,1.0

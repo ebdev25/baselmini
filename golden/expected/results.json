@@ -1,0 +1,149 @@
+{
+  "asof": "2025-09-15",
+  "capital": {
+    "components": {
+      "at1": 0.0,
+      "cet1": 120.0,
+      "deductions": 0.0,
+      "tier1": 120.0,
+      "tier2": 0.0,
+      "total_capital": 120.0
+    },
+    "headroom": {
+      "cet1": 0.7322,
+      "leverage": 0.09,
+      "tier1": 0.7172,
+      "total": 0.6972
+    },
+    "leverage": {
+      "exposure_measure": 1000.0,
+      "ratio": 0.12
+    },
+    "ratios": {
+      "cet1_ratio": 0.8022,
+      "tier1_ratio": 0.8022,
+      "total_capital_ratio": 0.8022
+    },
+    "requirements": {
+      "cet1_required": 0.07,
+      "leverage_required": 0.03,
+      "tier1_required": 0.085,
+      "total_required": 0.105
+    }
+  },
+  "fx_meta": null,
+  "lcr": {
+    "breakdown": {
+      "level1": 150.0,
+      "level2a_allowed": 0.0,
+      "level2b_allowed": 0.0
+    },
+    "caps": {
+      "inflow_cap_pct": 0.75,
+      "level2_total_cap_pct": 0.4,
+      "level2b_cap_pct": 0.15
+    },
+    "hqla": 150.0,
+    "inflow_cap_amount": 20.0,
+    "inflows": 20.0,
+    "lcr": 1.875,
+    "lcr_percent": 187.5,
+    "net_outflows": 80.0,
+    "outflows": 100.0
+  },
+  "nsfr": {
+    "asf": 120.0,
+    "nsfr": 1.2,
+    "nsfr_percent": 120.0,
+    "rsf": 100.0
+  },
+  "reconciliation": {
+    "rwa_per_exposure_delta": 0.0
+  },
+  "rwa": {
+    "by_class": {
+      "Corporate": 41.5,
+      "Mortgage": 70.0,
+      "SME": 38.09
+    },
+    "kpis": {
+      "by_class": {
+        "Corporate": {
+          "density": 0.5,
+          "ead": 83.0,
+          "ead_gross": 100.0,
+          "rwa": 41.5
+        },
+        "Mortgage": {
+          "density": 0.35,
+          "ead": 200.0,
+          "ead_gross": 200.0,
+          "rwa": 70.0
+        },
+        "SME": {
+          "density": 0.7619,
+          "ead": 50.0,
+          "ead_gross": 50.0,
+          "rwa": 38.09
+        }
+      },
+      "total": {
+        "density": 0.4492,
+        "ead": 333.0,
+        "ead_gross": 350.0,
+        "rwa": 149.59
+      }
+    },
+    "per_exposure": [
+      {
+        "asset_class": "Corporate",
+        "collateral_haircut_effect": 17.0,
+        "collateral_mode": "simple",
+        "crm_path": "simple: type haircut=0.15",
+        "ead": 83.0,
+        "ead_gross": 100.0,
+        "id": "E1",
+        "rating": "A",
+        "risk_weight": 0.5,
+        "rw_source": "Corporate:A",
+        "rwa": 41.5,
+        "scenario_flags": "",
+        "supporting_factor_applied": 1.0
+      },
+      {
+        "asset_class": "Mortgage",
+        "collateral_haircut_effect": 0.0,
+        "collateral_mode": "simple",
+        "crm_path": "simple: none",
+        "ead": 200.0,
+        "ead_gross": 200.0,
+        "id": "E2",
+        "rating": "NR",
+        "risk_weight": 0.35,
+        "rw_source": "Mortgage:LTV<=0.80→0.35",
+        "rwa": 70.0,
+        "scenario_flags": "",
+        "supporting_factor_applied": 1.0
+      },
+      {
+        "asset_class": "SME",
+        "collateral_haircut_effect": 0.0,
+        "collateral_mode": "simple",
+        "crm_path": "simple: none",
+        "ead": 50.0,
+        "ead_gross": 50.0,
+        "id": "E3",
+        "rating": "NR",
+        "risk_weight": 1.0,
+        "rw_source": "SME:default 1.00",
+        "rwa": 38.09,
+        "scenario_flags": "",
+        "supporting_factor_applied": 0.7619
+      }
+    ],
+    "total_rwa": 149.59
+  },
+  "scenario_name": "Base case",
+  "warnings": []
+}
+

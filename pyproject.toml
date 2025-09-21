@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "baselmini"
+version = "1.0.0"
+description = "Basel III mini engine (credit + liquidity)"
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+
+dependencies = [
+  "PyYAML>=6.0",
+  "tomli; python_version < '3.11'"
+]
+
+authors = [
+  { name = "Edvinas Butkus", email = "edvinas@example.com" }
+]
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3 :: Only",
+  "Operating System :: OS Independent",
+  "Topic :: Office/Business :: Financial :: Accounting",
+  "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/baselmini"
+Repository = "https://github.com/yourname/baselmini"
+Issues = "https://github.com/yourname/baselmini/issues"
+
+[project.scripts]
+baselmini = "baselmini.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["baselmini*"]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.data-files]
+"baselmini_examples/configs" = ["configs/*.yml"]
+"baselmini_examples/data" = ["data/*"]
+"baselmini_examples/scenarios" = ["scenarios/*.yml"]
+"baselmini_examples/golden/inputs" = ["golden/inputs/*"]
+"baselmini_examples/golden/expected" = ["golden/expected/*"]

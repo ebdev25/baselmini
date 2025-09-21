@@ -1,0 +1,11 @@
+id,asset_class,rating,exposure_ccy,ccf_type,mortgage_ltv,collateral_type,collateral_value,collateral_ccy,is_sme,is_infra,residual_maturity_days,ccy,eligible_collateral,collateral_haircut,ead
+E001,Corporate,A,USD,,,corp_bond,0,USD,0,0,,EUR,100000.0,,100000
+E002,Mortgage,NR,USD,,0.75,,0,,0,0,,GBP,,,250000
+E003,Bank,AA,USD,,,cash,0,USD,0,0,,USD,500000.0,,500000
+E004,Corporate,BBB,USD,,,,0,,1,0,,JPY,,,200000
+E005,Sovereign,AA,USD,,,,0,,0,0,,USD,,,1000000
+E006,Retail,NR,USD,,,,0,,0,0,,EUR,,,50000
+E007,Infrastructure,BBB,USD,,,gov_bond_lvl1,0,USD,0,1,,EUR,50000.0,,750000
+E008,Corporate,A,USD,,,,0,,0,0,,USD,,,150000
+E009,Corporate,BB,USD,,,corp_bond,0,USD,0,0,,GBP,20000.0,0.25,120000
+E010,SME,BBB,USD,,,cash,0,USD,1,0,,USD,10000.0,,80000

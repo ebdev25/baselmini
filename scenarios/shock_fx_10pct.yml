@@ -1,0 +1,8 @@
+scenario:
+  name: FX depreciation 10% (toy)
+  ead_multipliers:
+    Corporate: 1.10
+    Retail: 1.05
+  rating_notches_down: 1
+  lcr_outflow_multiplier: 1.10
+  hqlahaircut_multiplier: 1.00

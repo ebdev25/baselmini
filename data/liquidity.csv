@@ -1,0 +1,8 @@
+bucket,amount_ccy,haircuts,rate,item
+HQLA_L1,20000000,0.0,,Level 1 Gov Bonds
+HQLA_L2A,5000000,0.15,,Level 2A Covered Bonds
+HQLA_L2B,3000000,0.5,,Level 2B Corporate Bonds
+OUTFLOW,30000000,0.0,0.1,Wholesale Funding
+OUTFLOW,25000000,0.0,0.05,Retail Deposits
+INFLOW,10000000,0.0,0.5,Loan Repayments
+INFLOW,5000000,0.0,1.0,Other Inflows

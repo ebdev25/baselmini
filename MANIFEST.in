@@ -1,0 +1,11 @@
+include README.md LICENSE
+graft configs
+graft data
+graft scenarios
+graft golden
+prune out_*         # don't ship run outputs
+prune golden/out_*  # don't ship run golden outputs
+global-exclude ._* .DS_Store Thumbs.db
+global-exclude .~lock*
+prune data/.~lock*
+

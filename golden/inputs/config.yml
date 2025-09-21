@@ -1,0 +1,86 @@
+# ---------- Risk Weights (Data-driven SA-style) ----------
+risk_weights:
+  Sovereign:
+    AAA: 0.00
+    AA: 0.00
+    A: 0.20
+    BBB: 0.50
+    BB: 1.50
+    B: 1.50
+    CCC: 1.50
+    NR: 1.00
+    default: 1.00
+  Bank:
+    AAA: 0.20
+    AA: 0.20
+    A: 0.50
+    BBB: 0.50
+    BB: 1.00
+    B: 1.50
+    CCC: 1.50
+    NR: 0.50
+    default: 0.50
+  Corporate:
+    AAA: 0.20
+    AA: 0.20
+    A: 0.50
+    BBB: 1.00
+    BB: 1.50
+    B: 1.50
+    CCC: 1.50
+    NR: 1.00
+    default: 1.00
+  Retail:
+    default: 0.75
+  Mortgage:
+    ltv_thresholds:
+      - { lte: 0.80, weight: 0.35 }
+      - { lte: 1.00, weight: 0.50 }
+    default: 1.00
+  SME:               # explicit class to silence warnings
+    default: 1.00
+
+# ---------- Liquidity Coverage Ratio (with Level-2 caps) ----------
+lcr:
+  inflow_cap_pct: 0.75
+  level2_total_cap_pct: 0.40
+  level2b_cap_pct: 0.15
+
+# ---------- EAD / CCFs ----------
+ead:
+  ccf: { }
+  default_ccf: 1.00
+
+# ---------- Collateral & CRM ----------
+collateral:
+  enabled: true
+  mode: "simple"
+  default_haircut: 0.15
+  haircuts:
+    corp_bond: 0.15
+
+# ---------- EU-style Supporting Factors ----------
+supporting_factors:
+  enabled: true
+  stacking: "min"
+  priority_order: ["sme","infra"]
+  sme:
+    on_asset_classes: ["SME"]
+    factor: 0.7619
+  infra:
+    on_asset_classes: ["Infrastructure"]
+    factor: 0.75
+
+# ---------- Capital Requirements / Buffers / Leverage ----------
+requirements:
+  cet1_min: 0.045
+  tier1_min: 0.060
+  total_min: 0.080
+  ccb: 0.025
+  ccyb: 0.000
+  gsib: 0.000
+  leverage_min: 0.030
+
+# ---------- FX ----------
+fx:
+  base_ccy: "USD"
