@@ -10,19 +10,19 @@
       "total_capital": 120.0
     },
     "headroom": {
-      "cet1": 0.7322,
+      "cet1": 0.5025,
       "leverage": 0.09,
-      "tier1": 0.7172,
-      "total": 0.6972
+      "tier1": 0.4875,
+      "total": 0.4675
     },
     "leverage": {
       "exposure_measure": 1000.0,
       "ratio": 0.12
     },
     "ratios": {
-      "cet1_ratio": 0.8022,
-      "tier1_ratio": 0.8022,
-      "total_capital_ratio": 0.8022
+      "cet1_ratio": 0.5725,
+      "tier1_ratio": 0.5725,
+      "total_capital_ratio": 0.5725
     },
     "requirements": {
       "cet1_required": 0.07,
@@ -63,6 +63,7 @@
   "rwa": {
     "by_class": {
       "Corporate": 41.5,
+      "Infrastructure": 60.0,
       "Mortgage": 70.0,
       "SME": 38.09
     },
@@ -73,6 +74,12 @@
           "ead": 83.0,
           "ead_gross": 100.0,
           "rwa": 41.5
+        },
+        "Infrastructure": {
+          "density": 0.75,
+          "ead": 80.0,
+          "ead_gross": 80.0,
+          "rwa": 60.0
         },
         "Mortgage": {
           "density": 0.35,
@@ -88,10 +95,10 @@
         }
       },
       "total": {
-        "density": 0.4492,
-        "ead": 333.0,
-        "ead_gross": 350.0,
-        "rwa": 149.59
+        "density": 0.5075,
+        "ead": 413.0,
+        "ead_gross": 430.0,
+        "rwa": 209.59
       }
     },
     "per_exposure": [
@@ -120,7 +127,7 @@
         "id": "E2",
         "rating": "NR",
         "risk_weight": 0.35,
-        "rw_source": "Mortgage:LTV<=0.80→0.35",
+        "rw_source": "Mortgage:LTV<=0.80\u21920.35",
         "rwa": 70.0,
         "scenario_flags": "",
         "supporting_factor_applied": 1.0
@@ -139,9 +146,24 @@
         "rwa": 38.09,
         "scenario_flags": "",
         "supporting_factor_applied": 0.7619
+      },
+      {
+        "asset_class": "Infrastructure",
+        "collateral_haircut_effect": 0.0,
+        "collateral_mode": "simple",
+        "crm_path": "simple: none",
+        "ead": 80.0,
+        "ead_gross": 80.0,
+        "id": "E4",
+        "rating": "BBB",
+        "risk_weight": 1.0,
+        "rw_source": "Infrastructure:default 1.00",
+        "rwa": 60.0,
+        "scenario_flags": "",
+        "supporting_factor_applied": 0.75
       }
     ],
-    "total_rwa": 149.59
+    "total_rwa": 209.59
   },
   "scenario_name": "Base case",
   "warnings": []

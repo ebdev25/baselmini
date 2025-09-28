@@ -1,5 +1,9 @@
 # baselmini v1.0.0
 
+[![PyPI version](https://img.shields.io/pypi/v/baselmini.svg)](https://pypi.org/project/baselmini/)
+![Python versions](https://img.shields.io/pypi/pyversions/baselmini)
+![License](https://img.shields.io/pypi/l/baselmini)
+
 A minimal-yet-robust Basel III standardized-approach engine.  
 Covers **credit risk RWA**, **capital ratios** (CET1/Tier1/Total + leverage + buffers), **liquidity** (LCR with composition caps), **NSFR (lite)**, and a **scenario engine**.  
 Outputs are auditable to the per-exposure level with rich explainability.
@@ -131,7 +135,7 @@ Written to the chosen `--out` directory:
 
 - **report.md**  
   Human-readable mini Pillar 3 style report:  
-  - Breaches banner (⚠ CET1, LCR, NSFR, leverage)  
+  - Breaches banner (!! CET1, LCR, NSFR, leverage)  
   - Capital components, ratios, buffers, headroom  
   - RWA totals + KPIs with reconciliation check  
   - LCR with Level-2 caps and composition table  
