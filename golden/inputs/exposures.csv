@@ -1,5 +1,5 @@
-id,asset_class,rating,ead,eligible_collateral,collateral_type,exposure_ccy,mortgage_ltv,is_sme
-E1,Corporate,A,100,20.0,corp_bond,USD,,
-E2,Mortgage,NR,200,,,USD,0.75,
-E3,SME,NR,50,,,USD,,1.0
-E4,Infrastructure,BBB,80,,,USD,,
+id,asset_class,rating,ead,eligible_collateral,collateral_type,exposure_ccy,mortgage_ltv,is_sme,is_infra
+E1,Corporate,A,100,20,corp_bond,USD,,,
+E2,Mortgage,NR,200,,,USD,0.75,,
+E3,SME,NR,50,,,USD,,1,
+E4,Infrastructure,BBB,80,,,USD,,,1

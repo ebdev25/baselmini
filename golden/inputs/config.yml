@@ -39,6 +39,8 @@ risk_weights:
     default: 1.00
   SME:               # explicit class to silence warnings
     default: 1.00
+  Infrastructure:
+    default: 1.00
 
 # ---------- Liquidity Coverage Ratio (with Level-2 caps) ----------
 lcr:
